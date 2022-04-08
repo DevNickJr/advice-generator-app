@@ -71,6 +71,10 @@ p {
     display: none;
 }
 
+.attribution { 
+    bottom: 0px;
+}
+
 @media screen and (min-width: 550px) {
     #icon1 {
         display: none;
@@ -78,6 +82,9 @@ p {
     #icon2 {
         display: block;
         margin: auto;
+    }
+    .attribution { 
+        bottom: 20px;
     }
 }
 
