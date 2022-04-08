@@ -18,10 +18,15 @@ function giveAdvice() {
     xhttp.onload = function() {
         if (xhttp.status = 200) {
             const resp= JSON.parse(this.responseText);
-            message.innerHTML= resp.slip.advice
+            message.innerHTML= `"${resp.slip.advice}"`
             id.innerHTML= resp.slip.id; 
         }    
+    }
+    xhttp.onerror = function() {
+        message.innerHTML= `Advice failed to Load. Check your internet connection`
     }
     xhttp.open('GET', 'https://api.adviceslip.com/advice');
     xhttp.send();
 }
+
+giveAdvice()
